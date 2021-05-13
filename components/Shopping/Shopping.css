@@ -1,0 +1,20 @@
+.shopping-container {
+    width: 85%;
+    height: 50vh;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    padding: var(--spacing-large);
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+}
+.shopping-element__name {
+    padding: var(--spacing-medium);
+    font-family: bold;
+}
+.shopping-element__price{
+    padding: var(--spacing-medium);
+    color: var(--color-unaccent);
+}

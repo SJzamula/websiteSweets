@@ -7,14 +7,20 @@ class Shopping {
             if (productsStore.indexOf(id) !== -1) {
                 htmlCatalog += `
                     <tr>
-                        <td>${name}</td>
-                        <td>${price.toLocaleString() USD}</td>
+                        <td class="shopping-element__name">${name}</td>
+                        <td class="shopping-element__price">${price.toLocaleString() USD}</td>
                     </tr>
                 `;
             }
         });
 
-        const html =``;
+        const html =`
+            <div class="shopping-container">
+                <table>
+                    ${htmlCatalog}
+                </table>
+            </div>
+        `;
         ROOT_SHOPPING.innerHTML = html;
 
     }
