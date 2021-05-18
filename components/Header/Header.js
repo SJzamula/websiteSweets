@@ -1,20 +1,22 @@
 class Header {
-    handlerOpenShoppingPage() {
-        headerPage.render();
-    }
+  handlerOpenShoppingPage() {
+    shoppingPage.render();
+  }
     
-    render(count) {
-       const html = `
-       <div class="header-container">
-           <div class="header-counter" onclick="headerPage.handlerOpenShoppingPage();">
-           🛒${count}
-           </div>
-       </div>
-       `;
+  render(count) {
+    const html = `
+      <div class="header-container">
+        <div class="header-counter" onclick="headerPage.handlerOpenShoppingPage();">
+          🛒${count}
+        </div>
+      </div>
+    `;
 
-       ROOT_HEADER.innerHTML = html;
-    }
+    ROOT_HEADER.innerHTML = html;
+  }
 };
 
 const headerPage = new Header();
-headerPage.render();
+
+const productsStore = localStorageUtil.getProducts();
+headerPage.render(productsStore.length);
