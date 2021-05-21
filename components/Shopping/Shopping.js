@@ -16,6 +16,7 @@ class Shopping {
             <td class="shopping-element__price">${price.toLocaleString()} USD</td>
           </tr>
         `;
+        sumCatalog += price;
       }
     });
 
@@ -25,7 +26,7 @@ class Shopping {
         <table>
           ${htmlCatalog}
           <tr>
-            <td class="shopping-element__name">Сумма</td>
+            <td class="shopping-element__name">Сумма: </td>
             <td class="shopping-element__price">${sumCatalog.toLocaleString()} USD</td>
           </tr>
         </table>
