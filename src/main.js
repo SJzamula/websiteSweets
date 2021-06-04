@@ -1,9 +1,9 @@
 'use strict';
 
-require('./constants/catalog.js');
-require('./constants/root.js');
-require('./components/Header.js');
-require('./components/Products.js');
-require('./components/Shopping.js');
-require('./modules/slider.js');
-require('./utils/localStorageUtil');
+import './constants/catalog.js';
+import './constants/root.js';
+import './components/Header.js';
+import'./components/Products.js';
+import './components/Shopping.js';
+import './modules/slider.js';
+import './utils/localStorageUtil';
