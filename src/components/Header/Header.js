@@ -1,3 +1,6 @@
+import shoppingPage from '../Shopping/Shopping.js';
+import { ROOT_HEADER } from '../../constants/root.js';
+
 class Header {
   handlerOpenShoppingPage() {
     shoppingPage.render();
@@ -6,7 +9,8 @@ class Header {
   render(count) {
     const html = `
       <div class="header-container">
-        <div class="header-counter" onclick="headerPage.handlerOpenShoppingPage();">
+        <div class="header-counter" 
+        onclick="headerPage.handlerOpenShoppingPage();">
           🛒${count}
         </div>
       </div>
@@ -16,17 +20,4 @@ class Header {
   }
 }
 
-const headerPage = new Header();
-
-const productsStore = localStorageUtil.getProducts();
-headerPage.render(productsStore.length);
-
-
-/*
-render(count) {
-  const html = '🛒' + count;
-  document.getElementById('header-container') = addHtml;
-  headerPage.addEventListener('click', handlerOpenShoppingPage());
-}
-*/
-module.exports;
+export default new Header();

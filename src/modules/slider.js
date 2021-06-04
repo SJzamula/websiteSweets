@@ -1,5 +1,3 @@
-'use strict';
-
 let position = 0;
 const slidesToShow = 6;
 const slidesToScroll = 2;
@@ -12,6 +10,13 @@ const itemsCount = items.length;
 const itemWidth = (container.clientWidth - slidesToShow) / slidesToShow;
 const movePosition = slidesToScroll * itemWidth;
 
+const setPosition = () => {
+  track.style.transform = `translateX(${position}px)`;
+};
+const checkBtns = () => {
+  btnPrev.disabled = position === 0;
+  btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
+};
 
 items.forEach(item => {
   item.style.minWidth = `${itemWidth}px`;
@@ -34,14 +39,6 @@ btnPrev.addEventListener('click', () => {
   setPosition();
   checkBtns();
 });
-
-const setPosition = () => {
-  track.style.transform = `translateX(${position}px)`;
-};
-const checkBtns = () => {
-  btnPrev.disabled = position === 0;
-  btnNext.disabled = position <= -(itemsCount - slidesToShow) * itemWidth;
-};
 
 checkBtns();
 module.exports;

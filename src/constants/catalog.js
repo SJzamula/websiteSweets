@@ -61,4 +61,4 @@ const CATALOG = [
   },
 ];
 
-module.exports;
+export default CATALOG;

@@ -1,3 +1,7 @@
+import localStorageUtil from '../../utils/localStorageUtil.js';
+import CATALOG from '../../constants/catalog.js';
+import { ROOT_PRODUCTS } from '../../constants/root.js';
+
 class Products {
   constructor() {
     this.classNameActive = 'products-element__btn_active';
@@ -6,7 +10,7 @@ class Products {
   }
 
   handleSetLocationStorage(element, id) {
-    const { pushProduct, products } = localStorageUtil.putProducts(id);
+    const { pushProduct } = localStorageUtil.putProducts(id);
 
     if (pushProduct) {
       element.classList.add(this.classNameActive);
@@ -39,7 +43,9 @@ class Products {
           <span class="products-element__price"> 
             🔥➜ ${element.price} UAH
           </span>
-          <button class="products-element__btn${activeClass}" onclick="productsPage.handleSetLocationStorage(this, '${element.id}');">
+          <button class="products-element__btn${activeClass}" 
+            onclick="productsPage
+                      .handleSetLocationStorage(this, '${element.id}');">
             ${activeText}
           </button>
         </li>  
@@ -56,5 +62,4 @@ class Products {
   }
 }
 
-const productsPage = new Products();
-productsPage.render();
+export default new Products();
