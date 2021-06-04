@@ -7,7 +7,7 @@ class Products {
 
   handleSetLocationStorage(element, id) {
     const { pushProduct, products } = localStorageUtil.putProducts(id);
-    
+
     if (pushProduct) {
       element.classList.add(this.classNameActive);
       element.innerHTML = this.labelRemove;
@@ -17,7 +17,7 @@ class Products {
     }
   }
 
-  render() {     
+  render() {
     const productsStore = localStorageUtil.getProducts();
     let htmlCatalog = '';
 
@@ -25,7 +25,7 @@ class Products {
       let activeClass = '';
       let activeText = '';
 
-      if ( !(productsStore.includes(element.id)) ) {
+      if (!(productsStore.includes(element.id))) {
         activeText = this.labelAdd;
       } else {
         activeClass = ' ' + this.classNameActive;

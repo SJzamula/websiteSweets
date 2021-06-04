@@ -2,7 +2,7 @@ class Header {
   handlerOpenShoppingPage() {
     shoppingPage.render();
   }
-    
+
   render(count) {
     const html = `
       <div class="header-container">
@@ -14,7 +14,7 @@ class Header {
 
     ROOT_HEADER.innerHTML = html;
   }
-};
+}
 
 const headerPage = new Header();
 
@@ -27,6 +27,6 @@ render(count) {
   const html = '🛒' + count;
   document.getElementById('header-container') = addHtml;
   headerPage.addEventListener('click', handlerOpenShoppingPage());
-} 
+}
 */
 module.exports;

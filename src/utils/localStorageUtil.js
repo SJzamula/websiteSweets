@@ -31,4 +31,3 @@ class LocalStorageUtil {
 }
 
 const localStorageUtil = new LocalStorageUtil();
-export ;

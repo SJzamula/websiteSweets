@@ -2,24 +2,27 @@
   "name": "websitesweets",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/main.js",
   "scripts": {
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanixto/websiteSweets.git"
+    "url": "git+https://github.com/Zamula-Liuba/websiteSweets.git"
   },
   "author": "Hakaviy Alexandr, Zamula-Liuba",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zamula-Liuba/websiteSweets.git"
+    "url": "https://github.com/Zamula-Liuba/websiteSweets/issues"
   },
-  "homepage": "https://github.com/sanixto/websiteSweets#readme",
+  "homepage": "https://github.com/Zamula-Liuba/websiteSweets#readme",
   "devDependencies": {
-    "eslint": "^7.26.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.2"
+    "eslint": "^7.27.0",
+    "prettier": "^2.3.0"
+  },
+  "dependencies": {
+    "pg": "^8.6.0",
+    "ws": "^7.4.6"
   }
 }
