@@ -60,3 +60,5 @@ const CATALOG = [
         price: 110,
     },
 ];
+
+module.exports;

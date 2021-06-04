@@ -44,3 +44,4 @@ const checkBtns = () => {
 };
 
 checkBtns();
+module.exports;

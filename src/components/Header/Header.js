@@ -20,3 +20,13 @@ const headerPage = new Header();
 
 const productsStore = localStorageUtil.getProducts();
 headerPage.render(productsStore.length);
+
+
+/*
+render(count) {
+  const html = '🛒' + count;
+  document.getElementById('header-container') = addHtml;
+  headerPage.addEventListener('click', handlerOpenShoppingPage());
+} 
+*/
+module.exports;
