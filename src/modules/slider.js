@@ -23,9 +23,14 @@ items.forEach(item => {
 });
 
 btnNext.addEventListener('click', () => {
-  const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+  const add = Math.abs(position) + slidesToShow * itemWidth;
+  const itemsLeft = itemsCount - add / itemWidth;
 
-  position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+  if (itemsLeft >= slidesToScroll) {
+    position -= movePosition;
+  } else {
+    position -= itemsLeft * itemWidth;
+  }
 
   setPosition();
   checkBtns();
@@ -34,11 +39,14 @@ btnNext.addEventListener('click', () => {
 btnPrev.addEventListener('click', () => {
   const itemsLeft = Math.abs(position) / itemWidth;
 
-  position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+  if (itemsLeft >= slidesToScroll) {
+    position += movePosition;
+  } else {
+    position += itemsLeft * itemWidth;
+  }
 
   setPosition();
   checkBtns();
 });
 
 checkBtns();
-module.exports;

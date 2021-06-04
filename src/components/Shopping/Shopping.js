@@ -12,19 +12,19 @@ class Shopping {
     let htmlCatalog = '';
     let sumCatalog = 0;
 
-    CATALOG.forEach(({ id, name, price }) => {
-      if (productsStore.indexOf(id) !== -1) {
+    for (const element of CATALOG) {
+      if (productsStore.indexOf(element.id) !== -1) {
         htmlCatalog += `
           <tr>
-            <td class="shopping-element__name">${name}</td>
+            <td class="shopping-element__name">${element.name}</td>
             <td class="shopping-element__price">
-              ${price.toLocaleString()} USD
+              ${element.price.toLocaleString()} USD
             </td>
           </tr>
         `;
-        sumCatalog += price;
+        sumCatalog += element.price;
       }
-    });
+    }
 
     const html = `
       <div class="shopping-container">
