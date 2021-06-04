@@ -1,9 +1,8 @@
-'use strict';
+import localStorageUtil from './utils/localStorageUtil.js';
+import productsPage from './components/Products/Products.js';
+import headerPage from './components/Header/Header.js';
 
-import './constants/catalog.js';
-import './constants/root.js';
-import './components/Header.js';
-import'./components/Products.js';
-import './components/Shopping.js';
-import './modules/slider.js';
-import './utils/localStorageUtil';
+productsPage.render();
+
+const productsStore = localStorageUtil.getProducts();
+headerPage.render(productsStore.length);

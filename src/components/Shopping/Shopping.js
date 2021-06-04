@@ -1,10 +1,14 @@
+import { ROOT_SHOPPING } from '../../constants/root.js';
+import localStorageUtil from '../../utils/localStorageUtil.js';
+import CATALOG from '../../constants/catalog.js';
+
 class Shopping {
   handleClear() {
     ROOT_SHOPPING.innerHTML = '';
   }
 
   render() {
-    const pruductsStore = localStorageUtil.getProducts();
+    const productsStore = localStorageUtil.getProducts();
     let htmlCatalog = '';
     let sumCatalog = 0;
 
@@ -13,7 +17,9 @@ class Shopping {
         htmlCatalog += `
           <tr>
             <td class="shopping-element__name">${name}</td>
-            <td class="shopping-element__price">${price.toLocaleString()} USD</td>
+            <td class="shopping-element__price">
+              ${price.toLocaleString()} USD
+            </td>
           </tr>
         `;
         sumCatalog += price;
@@ -27,7 +33,9 @@ class Shopping {
           ${htmlCatalog}
           <tr>
             <td class="shopping-element__name">Сумма: </td>
-            <td class="shopping-element__price">${sumCatalog.toLocaleString()} USD</td>
+            <td class="shopping-element__price">
+              ${sumCatalog.toLocaleString()} USD
+            </td>
           </tr>
         </table>
       </div>
@@ -36,4 +44,4 @@ class Shopping {
   }
 }
 
-const shoppingPage = new Shopping();
+export default new Shopping();
